@@ -1,35 +1,37 @@
 import React from 'react';
-import myPic from './1.jpeg';
 import './App.css';
-import hobbies from './components/hobbies';
 import './animate.css';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import hobbies from './components/hobbies';
+import {Home} from './components/home';
+
 
 function App() {
   return (
-    <div className="App">
+   <Router>
+
+<div className="App">
       
       <header className="App-header">
       <div class="main">
               <ul>
-                <li><a href="#" >soft skills</a></li>
-                <li><a href="hobbies">hobbies</a></li>
+                <li><Link to="/">home</Link></li>
+                <li><Link to="/hobbies">hobbies</Link></li>
                 <li><a href="gallery.html">fears</a></li>
                 <li><a href="#">fav programming language</a></li>
                 <li><a href="#">schools Attended</a></li>
                 </ul>
             
           </div>
-        <img src={myPic} className="App-logo" alt="logo" />
-       <h1 class="animated infinite bounce slower">
-         Welcome to my Portfolio 
-       </h1>
-       <ol>
-          <li> My Name is Nchimunya Banda </li>
-          
-       </ol>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/hobbies" component={hobbies} />
       </header>
     </div>
+   </Router>
   );
 }
 
 export default App;
+
+  
+

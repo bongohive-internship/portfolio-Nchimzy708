@@ -4,7 +4,7 @@ import './animate.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import hobbies from './components/hobbies';
 import {Home} from './components/home';
-
+import softSkills from './components/softSkills.js';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
               <ul>
                 <li><Link to="/">home</Link></li>
                 <li><Link to="/hobbies">hobbies</Link></li>
-                <li><a href="gallery.html">fears</a></li>
+                <li><Link to="/softSkills">soft skills</Link></li>
                 <li><a href="#">fav programming language</a></li>
                 <li><a href="#">schools Attended</a></li>
                 </ul>
@@ -25,6 +25,7 @@ function App() {
           </div>
       <Route exact path="/" component={Home} />
       <Route exact path="/hobbies" component={hobbies} />
+      <Route exact path ="/softSkills" component={softSkills}/>
       </header>
     </div>
    </Router>
